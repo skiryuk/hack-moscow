@@ -39,6 +39,8 @@
     box-sizing: border-box;
     text-align: center;
     width: 100%;
+    border: none;
+    outline: none;
 }
 
 .login-view__button:hover {

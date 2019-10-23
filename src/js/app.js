@@ -1,86 +1,36 @@
 
-function App() {
-  AppComponent.apply(this, arguments);
-  this.template = '<div class="login-view__container"></div>' +
-                  '<div class="team-list-view__container"></div>' +
-                  '<div class="team-estimate-view__container"></div>';
+function checkCanSend() {
+  var sendButton = document.querySelector('.team-estimate__send-button');
 
-  // контейнеры
-  this.loginViewContainer = null;
-  this.teamListViewContainer = null;
-  this.teamEstimateViewContainer = null;
+  var form = document.getElementById('team-estimate-form');
+  var radioGroups = document.querySelectorAll('.team-estimate-criteria__marks');
+  var checkedRadiosCount = calcRadioCheckedCount(form);
+  var textAreas = document.querySelectorAll('.team-estimate-criteria__area__text');
+  var filledAreasCount = calcFilledAreasCount(form);
 
-  // компоненты
-  this.loginViewComponent = null;
-  this.teamListViewComponent = null;
-  this.teamEstimateViewComponent = null;
+  var isValidForm = radioGroups.length === checkedRadiosCount && textAreas.length === filledAreasCount;
+  isValidForm ? sendButton.classList.remove('disabled') : sendButton.classList.add('disabled');
 }
 
-extend(App, AppComponent);
-
-App.prototype.renderTo = function (container) {
-  AppComponent.prototype.renderTo.call(this, container);
-
-  // Создаем компонент входа
-  this.loginViewContainer = document.querySelector('.login-view__container');
-  this.loginViewComponent = new LoginViewComponent();
-  this.loginViewComponent.renderTo(this.loginViewContainer);
-
-  // Создаем компонент списка команд
-  this.teamListViewContainer = document.querySelector('.team-list-view__container');
-  this.teamListViewComponent = new TeamListViewComponent({
-    items: [{
-      id: 1,
-      title: 'Соколики'
-    }, {
-      id: 2,
-      title: 'Зайки'
-    },{
-      id: 3,
-      title: 'Попрыгайки'
-    },{
-      id: 4,
-      title: 'Покорители космоса'
-    },{
-      id: 1,
-      title: 'Соколики'
-    }, {
-      id: 2,
-      title: 'Зайки'
-    },{
-      id: 3,
-      title: 'Попрыгайки'
-    },{
-      id: 4,
-      title: 'Покорители космоса'
-    },{
-      id: 1,
-      title: 'Соколики'
-    }, {
-      id: 2,
-      title: 'Зайки'
-    }, {
-      id: 3,
-      title: 'Попрыгайки'
-    }, {
-      id: 4,
-      title: 'Покорители космоса'
-    }]
-  });
-  this.teamListViewComponent.renderTo(this.teamListViewContainer);
-
-  // Создаем компонент оценки выбранной команды
-  this.teamEstimateViewContainer = document.querySelector('.team-estimate-view__container');
-  this.teamEstimateViewComponent = new TeamEstimateView({
-    team: {
-      id: 4,
-      title: 'Покорители космоса'
+function calcRadioCheckedCount(form) {
+  var count = 0;
+  var inputs = form.getElementsByTagName('input');
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].checked){
+      count ++;
     }
-  });
-  this.teamEstimateViewComponent.renderTo(this.teamEstimateViewContainer);
-};
+  }
+  return count;
+}
 
-// Создаем приложение
-var app = new App();
-app.renderTo(document.querySelector('.app__container'));
+function calcFilledAreasCount(form) {
+  var count = 0;
+  var areas = form.getElementsByTagName('textarea');
+  for (var i = 0; i < areas.length; i++) {
+    if (areas[i].value){
+      count ++;
+    }
+  }
+  return count;
+}
 

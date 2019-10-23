@@ -17,16 +17,26 @@ html, body {
 .login-view__container {
     width: 250px;
     margin: 0 auto;
+}
+
+.login-view__container.hide {
     display: none;
 }
 
 .team-list-view__container {
     width: 400px;
     margin: 0 auto;
+}
+
+.team-list-view__container.hide {
     display: none;
 }
 
 .team-estimate-view__container {
     width: 400px;
     margin: 0 auto;
+}
+
+.team-estimate-view__container.hide {
+    display: none;
 }

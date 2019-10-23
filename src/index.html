@@ -9,12 +9,144 @@
     <link rel="stylesheet" href="css/components/team-estimate-view.component.css">
 </head>
 <body>
-    <div class="app__container"></div>
+    <div class="app__container">
+        <div class="login-view__container">
+            <div class="login-view">
+                <div class="login-view__logo">
+                    <img src="assets/svg/logo.svg">
+                </div>
+                <form class="login-view__form">
+                    <div class="login-view__user-name--label">Логин</div>
+                    <div class="login-view__user-name--field">
+                        <input type="text" placeholder="foo@bar.ru">
+                        </div>
+                    <div class="login-view__pass--label">Пароль</div>
+                    <div class="login-view__pass--field">
+                        <input type="password" placeholder="Пароль (не менее 6 символов)">
+                        </div>
+                    <input type="submit" class="login-view__button" value="Войти">
+                </form>
+            </div>
+        </div>
+
+        <div class="team-list-view__container hide">
+            <div class="team-list-view">
+                <div class="team-list-view__title">Выберите команду для оценки</div>
+                <div class="team-list-items__container">
+                    <div class="team-list-item-view">
+                        <div class="team-list-item-view__title">Соколики</div>
+                        <div class="team-list-item-view__button">Оценить</div>
+                    </div>
+                    <div class="team-list-item-view">
+                        <div class="team-list-item-view__title">Зайки</div>
+                        <div class="team-list-item-view__button">Оценить</div>
+                    </div>
+                    <div class="team-list-item-view">
+                        <div class="team-list-item-view__title">Попрыгайки</div>
+                        <div class="team-list-item-view__button">Оценить</div>
+                    </div>
+                    <div class="team-list-item-view">
+                        <div class="team-list-item-view__title">Покорители космоса</div>
+                        <div class="team-list-item-view__button">Оценить</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-estimate-view__container hide">
+            <div class="team-estimate-view">
+                <form id="team-estimate-form">
+                    <div class="team-list-view__title">Покорители космоса</div>
+                    <div class="team-estimate-criteria__list">
+                        <div class="team-estimate-criteria">
+                            <div class="team-estimate-criteria__title">Новизна</div>
+                            <div class="team-estimate-criteria__marks">
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="originality" value="1" onclick="checkCanSend()">
+                                    <span>1</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="originality" value="2" onclick="checkCanSend()">
+                                    <span>2</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="originality" value="3" onclick="checkCanSend()">
+                                    <span>3</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="originality" value="4" onclick="checkCanSend()">
+                                    <span>4</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="originality" value="5" onclick="checkCanSend()">
+                                    <span>5</span>
+                                </div>
+                            </div>
+                            <div class="team-estimate-criteria__area">
+                                <div class="team-estimate-criteria__title">Комментарий</div>
+                                <textarea class="team-estimate-criteria__area__text" oninput="checkCanSend()"></textarea>
+                            </div>
+                        </div>
+                        <div class="team-estimate-criteria">
+                            <div class="team-estimate-criteria__title">Функциональность</div>
+                            <div class="team-estimate-criteria__marks">
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="functionality" value="1" onclick="checkCanSend()">
+                                    <span>1</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="functionality" value="2" onclick="checkCanSend()">
+                                    <span>2</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="functionality" value="3" onclick="checkCanSend()">
+                                    <span>3</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="functionality" value="4" onclick="checkCanSend()">
+                                    <span>4</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="functionality" value="5" onclick="checkCanSend()">
+                                    <span>5</span>
+                                </div>
+                            </div>
+                            <div class="team-estimate-criteria__area">
+                                <div class="team-estimate-criteria__title">Комментарий</div>
+                                <textarea class="team-estimate-criteria__area__text" oninput="checkCanSend()"></textarea>
+                            </div>
+                        </div>
+                        <div class="team-estimate-criteria">
+                            <div class="team-estimate-criteria__title">Актуальность</div>
+                            <div class="team-estimate-criteria__marks">
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="actuality" value="1" onclick="checkCanSend()">
+                                    <span>1</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="actuality" value="2" onclick="checkCanSend()">
+                                    <span>2</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="actuality" value="3" onclick="checkCanSend()">
+                                    <span>3</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="actuality" value="4" onclick="checkCanSend()">
+                                    <span>4</span>
+                                </div>
+                                <div class="team-estimate-criteria__mark">
+                                    <input type="radio" name="actuality" value="5" onclick="checkCanSend()">
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="team-estimate__send-button disabled" value="Отправить оценку">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="js/utils.js"></script>
-<script src="js/components/app.component.js"></script>
-<script src="js/components/login-view.component.js"></script>
-<script src="js/components/team-list-view.component.js"></script>
-<script src="js/components/team-estimate-view.component.js"></script>
 <script src="js/app.js"></script>
 </html>

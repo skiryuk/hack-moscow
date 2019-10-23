@@ -34,4 +34,10 @@
     cursor: pointer;
     box-sizing: border-box;
     text-align: center;
+    border: none;
+    outline: none;
+}
+
+.team-list-item-view__button:hover {
+    opacity: 0.8;
 }
