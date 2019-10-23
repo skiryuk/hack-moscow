@@ -1,0 +1,32 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
+.app__container {
+    background-color: #443592;
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
+.login-view__container {
+    width: 250px;
+    margin: 0 auto;
+    display: none;
+}
+
+.team-list-view__container {
+    width: 400px;
+    margin: 0 auto;
+    display: none;
+}
+
+.team-estimate-view__container {
+    width: 400px;
+    margin: 0 auto;
+}

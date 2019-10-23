@@ -1,0 +1,37 @@
+
+.team-list-view__title {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.team-list-items__container {
+    margin-top: 64px;
+}
+
+.team-list-item-view {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    align-items: center;
+}
+
+.team-list-item-view__title {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    cursor: default;
+}
+
+.team-list-item-view__button {
+    color: white;
+    padding: 8px 16px;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    background-color: #4e3ca8;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+}

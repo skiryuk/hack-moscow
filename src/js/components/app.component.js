@@ -1,12 +1,3 @@
-/**
- * Унаследовать
- * @param child
- * @param base
- */
-function extend(child, base) {
-  child.prototype = base.prototype;
-  child.prototype.constructor = child;
-}
 
 /**
  * AppComponent
@@ -14,7 +5,7 @@ function extend(child, base) {
  * @constructor
  */
 function AppComponent(options) {
-  this.template = options.template;
+  this.template = (options || {}).template;
   this.element = null;
   this.container = null;
 }
@@ -43,12 +34,6 @@ AppComponent.prototype = {
     }
   }
 };
-
-function LoginViewComponent(options) {
-  AppComponent.apply(this, arguments);
-}
-
-extend(LoginViewComponent, AppComponent);
 
 
 
